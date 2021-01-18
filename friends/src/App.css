@@ -1,5 +1,7 @@
+
 .App {
   text-align: center;
+  background-color: slategray;
 }
 
 .App-logo {
@@ -35,4 +37,12 @@
   to {
     transform: rotate(360deg);
   }
+}
+
+
+/* my turn */
+.friendBox{
+  border: 1px solid black;
+  background-color:thistle;
+
 }
