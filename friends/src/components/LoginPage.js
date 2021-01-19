@@ -8,6 +8,7 @@ const [formState, setFormState ] = useState({
     username: '',
     password: ''
 })
+const [isLoading, setIsLoading ] = useState(false)
 
 
 const handleChanges = e => {
@@ -23,6 +24,7 @@ const handleChanges = e => {
 
 const login = (e) => {
 	console.log(login)
+		setIsLoading(true);
 		e.preventDefault();
 		console.log('formState', formState)
     	axios.post("http://localhost:5000/api/login", formState)
@@ -30,15 +32,18 @@ const login = (e) => {
 					console.log(res)
 					localStorage.setItem("token", res.data.payload)
 					props.history.push("/friendslist")
+					setIsLoading(false);
+					
 				})
         	.catch(err=>{
 					console.log(err)
+					setIsLoading(false);
 				})
 }
 
 return(
 <div>
-	Login Page
+	{(!isLoading ? "" : <p>Loading...</p>)}Login Page
 		<form onSubmit={login}>
 			<input
 				type="text"

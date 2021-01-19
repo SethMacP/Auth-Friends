@@ -1,7 +1,9 @@
 import React from 'react'
 import {LoginPage} from './components/LoginPage'
 import {Friends} from './components/Friends'
+import {AddFriend} from './components/AddFriend'
 import {Route} from 'react-router-dom'
+
 import {Navbar,NavbarBrand,Nav,NavItem,NavLink,NavbarText} from 'reactstrap';
 
 import './App.css'
@@ -21,20 +23,23 @@ function App() {
               <NavLink href="/login">Login</NavLink>
             </NavItem>
             <NavItem>
-              <NavLink href="/friendslist">Friends List</NavLink>
+              <NavLink href="/friendsList">Friends List</NavLink>
+            </NavItem>
+            <NavItem>
+              <NavLink href="/manageFriends">Manage Friends</NavLink>
             </NavItem>
             
           </Nav>
-          <NavbarText>Simple Text</NavbarText>
+          <NavbarText>This assignment is tough!</NavbarText>
         
       </Navbar>
     </div>
     
  
         
-        <Route path="/" component={LoginPage} />
-        <Route path="/friendslist" component={Friends} />
-        
+        <Route path="/login" component={LoginPage} />
+        <Route path="/manageFriends" component={AddFriend} />
+        <Route path="/friendsList" component={Friends} />
      
     </>
   );

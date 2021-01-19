@@ -42,7 +42,16 @@
 
 /* my turn */
 .friendBox{
-  border: 1px solid black;
-  background-color:thistle;
-
+  max-width: 80%;
+  margin-top: 10px;
+}
+.addFriendBox{
+  margin-top: 10px;
+}
+.friendContainer{
+  display:flex;
+  flex-flow: row wrap;
+}
+.card{
+  margin: 5px;
 }
